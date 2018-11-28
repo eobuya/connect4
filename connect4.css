@@ -1,0 +1,38 @@
+body {
+  background-color: black;
+  font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+}
+h1 {
+    text-align: center;
+    font-size: 3.5em;
+}
+h2 {
+    text-align: center;
+    margin: 0 auto;
+}
+table {
+  border-spacing: 1em;
+  width: 60%;
+  text-align: center;
+  background-color: green;
+}
+th, td {
+  border: 5px solid green;
+  border-radius: 50px;
+  background-color: white;
+  padding: 25px;
+  width: 50px;
+  height: 20px;
+}
+div {
+  text-align: center;
+}
+button {
+  text-align: center;
+  margin: 0 auto;
+  width: 25%;
+  height: 50%;
+  background: rgba(245, 245, 220, 0.486);
+  font-size: 2em;
+}
