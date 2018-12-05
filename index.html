@@ -4,11 +4,32 @@
     <meta charset="utf-8">
     <title>Connect Four</title>
     <script src="jquery-3.1.1.min.js"></script>
-    <!-- <script src="connect4.js"></script> -->
+    <script src="connect4.js"></script>
     <link rel="stylesheet" href="connect4.css">
  <script>
-<!--controller-->
- </script>
+ $(function(){
+   $("td").click(function() {
+     // this is a controller - event handler that fires when someone clicks on a cell
+     // This tells the model what to do
+     // obtain the id
+     var cell = $(this).attr("id");
+         // we forward the move to the model
+     connect4.makeMove(cell);
+   });
+   connect4.listen(function(grid) {
+     // this is the listener that updates view
+     // every time this callback function is called, we need to update the grid
+     for (var r = 0; r < grid.length; r++) {
+       for (var c = 0; c < grid[r].length; c++) {
+         $("#C" + r + c).empty();
+         $("#C" + r + c).css("background-color", grid[r][c]);
+         if (grid[r][c] === null){
+           $("#C" + r + c).css("background-color", "white");
+         }
+       }
+     }
+   });
+ }); </script>
  </head>
  <body>
     <h1>Connect 4</h1>
@@ -16,7 +37,7 @@
     <h2>Player 2 is Yellow</h2>
 
    <div class="reset">
-     <button>New Game</button>
+     <button onclick=javascript:connect4.clearGrid()>New Game</button>
    </div>
    <br>
    <table align="center">
